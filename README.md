@@ -19,15 +19,15 @@ A fully-featured Blackjack game built for the browser. Play against the dealer w
 <div style="display: flex; gap: 10px;">
   <div>
     <img width="600" alt="Let's Play" src="https://github.com/user-attachments/assets/5e634829-e8f1-4e58-87ef-58c464c9d22d" />
-    <p align="center">Let's Play</p>
+    <p>Let's Play</p>
   </div>
   <div>
     <img width="600" alt="Place your bet" src="https://github.com/user-attachments/assets/5e175d3a-f37e-4209-bae9-1281aef27da4" />
-    <p align="center">Place your bet</p>
+    <p>Place your bet</p>
   </div>
   <div>
     <img width="600" alt="Splitted hand" src="https://github.com/user-attachments/assets/51dd4361-a1fb-4baa-a01f-25c9c373f21d" />
-    <p align="center">Splitted hand</p>
+    <p>Splitted hand</p>
   </div>
 </div>
 
