@@ -16,19 +16,26 @@ A fully-featured Blackjack game built for the browser. Play against the dealer w
 ---
 
 ## 📸 Screenshots
-<img width="624" height="771" alt="image" src="https://github.com/user-attachments/assets/e06b0159-92de-425f-a711-e1f8dc28f346" />
-
-<p> winning by BlackJack </p>
-<img width="524" height="780" alt="image" src="https://github.com/user-attachments/assets/814e568e-2356-417a-85e2-2b3a97bb356b" />
-
-<p> splited hand: </p>
-<img width="1892" height="777" alt="image" src="https://github.com/user-attachments/assets/51dd4361-a1fb-4baa-a01f-25c9c373f21d" />
+<div style="display: flex; gap: 10px;">
+  <div>
+    <img width="600" alt="Let's Play" src="https://github.com/user-attachments/assets/5e634829-e8f1-4e58-87ef-58c464c9d22d" />
+    <p align="center">Let's Play</p>
+  </div>
+  <div>
+    <img width="600" alt="Place your bet" src="https://github.com/user-attachments/assets/5e175d3a-f37e-4209-bae9-1281aef27da4" />
+    <p align="center">Place your bet</p>
+  </div>
+  <div>
+    <img width="600" alt="Splitted hand" src="https://github.com/user-attachments/assets/51dd4361-a1fb-4baa-a01f-25c9c373f21d" />
+    <p align="center">Splitted hand</p>
+  </div>
+</div>
 
 ---
 
 ## 🛠️ How to Play
 
-1. **Place your bet** using the slider or input field.
+1. **Place your bet** using the slider (min bet = 10).
 2. **Click "Play"** to start the round.
 3. Choose to:
    - **Hit**: Take another card.
