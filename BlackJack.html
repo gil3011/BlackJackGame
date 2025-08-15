@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="info">
+        <div>Chips: <span id="chips">100</span><br>Bet: <span id="bet"></span></div>
+    </div>
+    <div id="dealer">
+        <div id="dealer-hand" class="hand">
+            <p id="dealer-value"></p>
+        </div>
+    </div>
+    <h2 id="status"></h2>
+    <div class="overlay">
+        <div class="placeBet">
+            <h2>Place Bet!</h2>
+            <h5>Min bet: 10 chips</h5>
+            <p>You have 100 chips</p>
+            <input type="range" id="slider" min="10" max="100" value="10" step="0.5">
+            <p id="betValue">Bet: 10</p>
+            <button class="buttonGreen" id ="play">Play</button>
+        </div>
+    </div>
+    <div id="game">
+        <div id="player-hand" class="hand">
+            <p id="player-value"></p>
+        </div>
+    </div>
+    <div id="controls">
+        <div>
+            <button class="buttonGreen" role="button" id="hit" onclick="hit()" hidden>Hit</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="stand" onclick="stand()" hidden>Stand</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="double" onclick="doubleDown()" hidden>Double</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="insurance" onclick="playInsurance(true)" hidden>Yes</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="noinsurance" onclick="playInsurance(false)" hidden>No</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="split" onclick="split()" hidden>Split</button>
+        </div>
+        <div>
+            <button class="buttonGreen" role="button" id="replay" onclick="playAgain()" hidden>Play Again</button>
+        </div>
+    </div>
+    <script src="BlackJackJS.js"></script>
+</body>
+</html>

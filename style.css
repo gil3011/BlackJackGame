@@ -1,0 +1,162 @@
+﻿
+#dealer {
+    justify-self: center;
+}
+
+#game {
+    justify-self: center;
+    display: flex;
+    gap: 100px;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    margin: 0px;
+    background-image: url('images/Classic-Blackjack---GREEN_5000x.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+.hand {
+    margin: 0 10px;
+    position: relative;
+    height: 150px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #28a745, #ffc107);
+    border-radius: 5px;
+    outline: none;
+}
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: gold;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    }
+
+
+.buttonGreen {
+    margin: 1rem;
+    background-color: #f4fef8;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    padding: 7px 20px;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    touch-action: manipulation;
+}
+
+    .buttonGreen:hover {
+        box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+    .buttonGreen:disabled {
+        box-shadow: none;
+        transform: none;
+        background-color: gray;
+        color: aliceblue;
+    }
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+#chips, #bet {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: gold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+.card {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#player-value {
+    margin-top: 0;
+}
+
+.info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.grayscale {
+    filter: grayscale(1);
+    transform: scale(0.85);
+}
+
+#placeBet {
+    position: absolute;
+    z-index: 10;
+    opacity: 80%;
+    background-color: white;
+    width: 80%;
+    height: 300px;
+    margin: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+
+.placeBet {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+}
