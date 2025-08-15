@@ -18,10 +18,10 @@ A fully-featured Blackjack game built for the browser. Play against the dealer w
 ## 📸 Screenshots
 <img width="624" height="771" alt="image" src="https://github.com/user-attachments/assets/e06b0159-92de-425f-a711-e1f8dc28f346" />
 
-winning by BlackJack
+<p> winning by BlackJack </p>
 <img width="524" height="780" alt="image" src="https://github.com/user-attachments/assets/814e568e-2356-417a-85e2-2b3a97bb356b" />
 
-splited hand:
+<p> splited hand: </p>
 <img width="1892" height="777" alt="image" src="https://github.com/user-attachments/assets/51dd4361-a1fb-4baa-a01f-25c9c373f21d" />
 
 ---
