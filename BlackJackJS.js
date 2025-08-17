@@ -123,6 +123,15 @@ async function initializeGame() {
         document.getElementById('game').removeChild(split);
     }
     // init game
+    playerHand = new Hand();
+    dealerHand = new Hand();
+
+
+    playerHand.addCard(deck.deal());
+    playerHand.addCard(deck.deal());
+    dealerHand.addCard(deck.deal());
+    dealerHand.addCard(deck.deal());
+    playerChips -= Number(playerBet);
     statusLine.innerHTML = "Let's Play!";
     if (Number(playerChips) >= Number(playerBet)){
         doubleB.hidden= '';
@@ -134,16 +143,6 @@ async function initializeGame() {
     insuranceNoB.hidden = 'hidden';
     splitB.hidden = 'hidden';
     replayB.hidden = 'hidden';
-
-    playerHand = new Hand();
-    dealerHand = new Hand();
-
-
-    playerHand.addCard(deck.deal());
-    playerHand.addCard(deck.deal());
-    dealerHand.addCard(deck.deal());
-    dealerHand.addCard(deck.deal());
-    playerChips -= Number(playerBet);
 
     // show chips bet and card
     updateChips();
@@ -483,7 +482,7 @@ let bet = document.getElementById('bet');
 let playB = document.getElementById('play');
 
 playB.onclick = function (){
-    playerBet = slider.value;
+    playerBet = Number(slider.value);
     initializeGame();
     betWindow.style.display = 'none';
 }
