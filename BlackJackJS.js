@@ -97,7 +97,6 @@ class Hand {
         return (this.getValue() == 21 && this.cards.length == 2);
     }
 }
-
 let deck = new Deck();
 deck.shuffle();
 let playerHand;
@@ -125,7 +124,10 @@ async function initializeGame() {
     }
     // init game
     statusLine.innerHTML = "Let's Play!";
-    doubleB.hidden= '';
+    if (Number(playerChips) >= Number(playerBet)){
+        doubleB.hidden= '';
+    }
+
     hitB.hidden= '';
     standB.hidden= '';
     insuranceYesB.hidden = 'hidden';
@@ -150,7 +152,7 @@ async function initializeGame() {
     document.getElementById('dealer-value').innerText = "Dealer hand: " + (dealerHand.getValue() - dealerHand.cards[1].value);
 
     // check for split option
-    if (playerHand.cards[0].value == playerHand.cards[1].value) {
+    if (playerHand.cards[0].value == playerHand.cards[1].value && Number(playerChips) >= Number(playerBet)) {
         splitB.hidden = '';
     }
 
@@ -186,13 +188,19 @@ async function initializeGame() {
         resetGame();
     }
     else if (dealerHand.cards[0].rank == 'ace') {
-        statusLine.innerHTML='Dealar have Ace do you want to play Insurance bet?'
         doubleB.hidden = 'hidden';
         hitB.hidden = 'hidden';
         standB.hidden = 'hidden';
         splitB.hidden = 'hidden';
-        insuranceYesB.hidden = '';
-        insuranceNoB.hidden = '';
+        if (Number(playerBet) * 0.5 >= Number(playerChips)){
+            statusLine.innerHTML = "Don't have enough chips to play insurance";
+            playInsurance(false);
+        }
+        else{
+            statusLine.innerHTML='Dealar have Ace do you want to play Insurance bet?'
+            insuranceYesB.hidden = '';
+            insuranceNoB.hidden = '';
+        }
     }
 
 }
@@ -368,10 +376,12 @@ async function playInsurance(call) {
         else {
             await sleep(1000);
             statusLine.innerHTML = "No BlackJack, Let's Play!";
-            doubleB.hidden = '';
+            if (Number(playerChips) > Number(playerBet)){
+                doubleB.hidden= '';
+            }
             hitB.hidden = '';
             standB.hidden = '';
-            if (playerHand.cards[0].value == playerHand.cards[1].value) {
+            if (playerHand.cards[0].value == playerHand.cards[1].value && Number(playerChips) >= Number(playerBet)) {
                 splitB.hidden = '';
             }
             insuranceYesB.hidden = 'hidden';
@@ -393,10 +403,11 @@ async function playInsurance(call) {
         statusLine.innerHTML='Lost Insurance';
         playerChips -= Number(insurance);
         updateChips();
-        doubleB.hidden = '';
+        if (Number(playerChips) > Number(playerBet)){
+            doubleB.hidden= '';        }
         hitB.hidden = '';
         standB.hidden = '';
-        if (playerHand.cards[0].value == playerHand.cards[1].value) {
+        if (playerHand.cards[0].value == playerHand.cards[1].value && Number(playerChips) >= Number(playerBet)) {
             splitB.hidden = '';
         }
         insuranceYesB.hidden = 'hidden';
@@ -418,10 +429,6 @@ function resetGame() {
 
 }
 function split() {
-    if (Number(playerChips) < Number(playerBet)) {
-        statusLine.innerHTML = "Don't have enough chips";
-        return;
-    }
     doubleB.hidden = 'hidden';
     const player_Hand = document.getElementById('player-hand');
     const newHand = document.createElement('div');
